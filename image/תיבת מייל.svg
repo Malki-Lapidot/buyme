@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32">
+    <defs>
+        <path id="sdevobhcka" d="M22.2 9c.994 0 1.8.776 1.8 1.733v9.534c0 .957-.806 1.733-1.8 1.733H7.8c-.994 0-1.8-.776-1.8-1.733v-9.534C6 9.776 6.806 9 7.8 9h14.4zm.777 1.296L15 17.124l-7.977-6.828c-.078.128-.123.278-.123.437v9.534c0 .085.013.168.037.246l2.896-2.895.648.649-2.85 2.851c.055.01.111.015.169.015h14.34l-2.867-2.866.649-.65 3.067 3.066c.07-.123.111-.265.111-.416v-9.534c0-.16-.045-.309-.123-.437zm-.854-.43H7.876L15 15.964l7.123-6.098z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <g transform="translate(-1205 -956) translate(0 937) translate(1044 20) translate(162)">
+                        <use fill="#4F5869" fill-rule="nonzero" xlink:href="#sdevobhcka"/>
+                        <rect width="30" height="30" stroke="#4F5869" stroke-width=".8" rx="15"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

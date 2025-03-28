@@ -1,0 +1,1283 @@
+body {
+    direction: rtl;
+    background-color: white;
+    font-family: 'open sans hebrew', sans-serif;
+    font-weight: 400;
+}
+
+header {
+    background-color: #f2f4f7;
+    margin-bottom: 3%;
+    border-bottom: #ffa126 solid 3px;
+}
+
+#headerLogo {
+    width: 3.5%;
+    margin-right: 12%;
+}
+
+#login {
+    transform: translateX(-400%) translateY(-100%);
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bolder;
+    background-color: #ffa126;
+    display: inline-block;
+    border-radius: 5px;
+    padding-top: 0.2%;
+    padding-bottom: 0.2%;
+    width: 15%;
+    border: none;
+}
+
+#exit {
+    transform: translateX(570%) translateY(-70%);
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bolder;
+    background-color: #ffa126;
+    border-radius: 5px;
+    padding-top: 0.3%;
+    padding-bottom: 0.3%;
+    padding-right: 1%;
+    padding-left: 1%;
+    border: none;
+    margin-top: 3%;
+}
+
+#goBackPay {
+    color: #ffa126;
+    margin-right: 13%;
+}
+
+header h1 {
+    text-align: center;
+    font-weight: 500;
+}
+
+#circle1 {
+    display: inline-block;
+    border-radius: 50%;
+    background-color: #ffa126;
+    width: 2.5%;
+    height: 30px;
+    text-align: center;
+    margin-right: 22%;
+    color: white;
+    padding-top: 0.5%;
+    transform: translateY(50%);
+}
+
+#circle2,
+#circle3 {
+    display: inline-block;
+    border-radius: 50%;
+    background-color: rgb(220, 220, 220);
+    width: 2.5%;
+    height: 30px;
+    text-align: center;
+    padding-top: 0.5%;
+    margin-right: 25%;
+    color: #adadad;
+    transform: translateY(50%);
+}
+
+/* עיצוב העגלה */
+#myBag {
+    display: none;
+    position: fixed;
+    margin-top: -15%;
+    left: 0;
+    width: 300px;
+    height: 100vh;
+    background-color: #fff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    z-index: 9999999999;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#btnMyBag {
+    display: inline-block;
+    border: none;
+    background: transparent;
+    margin-right: 83%;
+    transform: translateY(-120%);
+}
+
+#btnMyBag img {
+    width: 18%;
+}
+
+.divAllCard {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+.divAllCard img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.divAllCard button {
+    background-color: #ffa126;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 10px;
+    width: 120px;
+    text-align: center;
+}
+
+#btnCloseBag {
+    background-color: white;
+    color: #ef8d0d;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    margin-right: 10px;
+    width: 120px;
+    text-align: center;
+}
+
+.divAllCard button:hover {
+    background-color: #ff8c00;
+}
+
+.btnPassToPay {
+    background-color: #ffa126;
+}
+
+.btnRemoveCard {
+    background-color: #ffa126;
+}
+
+#emptyBag {
+    text-align: center;
+    color: #333;
+    font-size: 18px;
+    padding: 20px;
+    margin-top: 50px;
+    width: 80%;
+}
+
+
+
+/* section */
+.picturePay {
+    margin-right: 65%;
+    margin-top: -55%;
+    width: 21%;
+    height: 42vh;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 5/3;
+    border: white solid 1.5px;
+    box-shadow: 2px 2px 10px rgba(30, 30, 30, 0.3);
+    z-index: 99;
+    display: block;
+}
+
+#imagePay {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlayTextPay {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 2%;
+    width: 98%;
+    background-color: white;
+    text-align: center;
+    transition: all 0.3s ease;
+    border-radius: 15px;
+    font-size: 100%;
+    height: 25%;
+    box-shadow: 2px 2px 10px rgba(11, 11, 11, 0.3);
+}
+
+#changeSumLink {
+    color: #ffa126;
+}
+
+#selectPay {
+    display: none;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #ffa126;
+    color: white;
+    font-weight: bold;
+    font-family: 'open sans hebrew', sans-serif;
+    width: 45%;
+    padding: 2.5%;
+    margin-top: -12%;
+    margin-right: 50%;
+}
+
+#selectPay:hover {
+    background-color: #ec9729;
+}
+
+#pricePay {
+    display: none;
+    width: 45%;
+    height: 28.5px;
+    font-size: 15px;
+    padding: 1%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+    margin-top: -5%;
+}
+
+#logoPay {
+    display: inline-block;
+    transform: translateY(10%);
+}
+
+#namePay {
+    display: inline-block;
+}
+
+#sumPay {
+    font-weight: bold;
+}
+
+
+
+/* step1 עיצוב טופס */
+#payForm {
+    margin-right: 15%;
+}
+
+#btnForOther {
+    border: none;
+    border-radius: 4px;
+    background-color: #ffa126;
+    color: white;
+    font-weight: bold;
+    padding: 3%;
+    padding-left: 14%;
+    padding-right: 14%;
+    font-family: 'open sans hebrew', sans-serif;
+
+}
+
+#forGift {
+    font-size: 16px;
+    margin-bottom: -2%;
+}
+
+#btnForMe {
+    border: none;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+    color: rgb(52, 51, 51);
+    padding: 3%;
+    padding-left: 16%;
+    padding-right: 16%;
+    font-family: 'open sans hebrew', sans-serif;
+
+}
+
+#btnForMe:hover {
+    background-color: #e3e3e3;
+}
+
+#selectFor {
+    border: solid #d7d7d7 0.5px;
+    border-radius: 4px;
+    padding: 0.05%;
+    background-color: #f0f0f0;
+    width: 22%;
+    font-family: 'open sans hebrew', sans-serif;
+    text-align: center;
+
+}
+
+#labelName {
+    margin-left: 13.5%;
+}
+
+#labelNameLabel {
+    display: inline-block;
+    font-size: 16px;
+}
+
+#reasonLabel {
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 12%;
+}
+
+#nameGet {
+    font-size: 100%;
+    padding: 0.6%;
+    border: 0.2px solid rgb(102, 102, 102);
+    border-radius: 6px;
+    width: 19.5%;
+    font-family: 'open sans hebrew', sans-serif;
+    margin-top: 1%;
+
+}
+
+#reason {
+    font-size: 100%;
+    padding: 0.55%;
+    border: 0.2px solid rgb(102, 102, 102);
+    border-radius: 6px;
+    width: 20.5%;
+    font-family: 'open sans hebrew', sans-serif;
+    margin-right: 1%;
+}
+
+#bracha {
+    font-size: 95%;
+    padding: 0.5%;
+    border: 0.2px solid rgb(102, 102, 102);
+    border-radius: 6px;
+    width: 42%;
+    font-family: 'open sans hebrew', sans-serif;
+    height: -10%;
+}
+
+#brachaLabel {
+    font-size: 16px;
+}
+
+#forMe {
+    display: none;
+    margin-right: 15%;
+}
+
+#forMe img {
+    margin-right: 4%;
+    width: 9%;
+    margin-top: 1%;
+}
+
+#addFile span {
+    font-size: smaller;
+    color: #767676;
+}
+
+.btnAddMedia:hover {
+    border-color: #ffa126;
+}
+
+#Divider {
+    color: #e3e3e3;
+}
+
+.btnAddMedia {
+    display: inline-block;
+    padding: 1%;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    border-radius: 50%;
+    border: 1.5px solid rgba(23, 23, 23, 0.368);
+    line-height: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#fileLabelVideo {
+    margin-right: 8%;
+    transform: translateY(-120%);
+}
+
+#mediaPreview,
+#imagePreview {
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 1%;
+}
+
+#mediaPreview video,
+#imagePreview img {
+    max-width: 150px;
+    height: auto;
+    display: block;
+}
+
+.remove-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #ffa126;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 50%;
+    width: 2.5%;
+    text-align: center;
+    line-height: 30px;
+}
+
+#videoModal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding-top: 20px;
+}
+
+#modalContent {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    max-height: 80%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    z-index: 99999999999;
+    position: absolute;
+    margin-right: 22%;
+}
+
+#modalContent h2 {
+    font-weight: 500;
+    color: #818181;
+}
+
+.modal-close {
+    color: #818181;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    color: #ffa126;
+}
+
+#videoListModal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+    max-height: 70vh;
+    overflow-y: auto;
+    width: 100%;
+}
+
+.video-item {
+    flex: 1 1 calc(33.333% - 10px);
+    box-sizing: border-box;
+    background-color: #eee;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+}
+
+.video-item video {
+    max-width: 100%;
+    height: auto;
+}
+
+.video-item:hover {
+    background-color: #ddd;
+}
+
+#continueStep1 {
+    border: none;
+    border-radius: 4px;
+    font-size: 110%;
+    background-color: #ffa126;
+    color: white;
+    font-weight: bold;
+    padding: 1%;
+    margin-top: 0.5%;
+    width: 43.5%;
+
+}
+
+#videoReady {
+    display: inline-block;
+}
+
+#pictureOrVideo {
+    display: inline-block;
+    margin-left: 2%;
+    margin-right: -14%;
+}
+
+/* step 2 */
+
+#button-container {
+    display: flex;
+    gap: 10%;
+    margin-right: 3%;
+}
+
+#button-wrapper-print h5 {
+    margin-right: 24%;
+    font-weight: 500;
+    margin-top: 20%;
+    color: #333333a8;
+}
+
+#button-print {
+    width: 75px;
+    height: 75px;
+    border: 0.1px solid rgba(102, 102, 102, 0.368);
+    border-radius: 50%;
+    background-color: transparent;
+    font-size: 15px;
+    line-height: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#button-print:hover {
+    border: 1px solid #ffa126;
+}
+
+
+#button-wrapper-email h5 {
+    margin-right: 24%;
+    font-weight: 500;
+    margin-top: 20%;
+    color: #333333a8;
+}
+
+#button-email {
+    width: 75px;
+    height: 75px;
+    border: 0.1px solid rgba(102, 102, 102, 0.368);
+    border-radius: 50%;
+    background-color: transparent;
+    font-size: 15px;
+    line-height: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#button-email:hover {
+    border: 1px solid #ffa126;
+}
+
+
+
+#button-wrapper-sms h5 {
+    margin-right: 24%;
+    font-weight: 500;
+    margin-top: 20%;
+    color: #333333a8;
+}
+
+#button-sms {
+    width: 75px;
+    height: 75px;
+    border: 0.1px solid rgba(102, 102, 102, 0.368);
+    border-radius: 50%;
+    background-color: transparent;
+    font-size: 15px;
+    line-height: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#button-sms:hover {
+    border: 1px solid #ffa126;
+}
+
+
+#btnx1,
+#btnx2,
+#btnx3 {
+    margin-left: -10%;
+    display: none;
+    width: 18px;
+    height: 18px;
+    border: 1px solid orange;
+    border-radius: 50%;
+    background-color: transparent;
+    color: orange;
+    font-size: 15px;
+    line-height: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"]+label::before {
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 2px solid #ffa126;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+input[type="radio"]:checked+label::before {
+    background-color: #ffa126;
+}
+
+#nowLable {
+    font-family: 'open sans hebrew', sans-serif;
+    font-size: 14px;
+    display: inline-block;
+
+}
+
+#latterLable {
+    font-family: 'open sans hebrew', sans-serif;
+    font-size: 14px;
+    display: inline-block;
+}
+
+#payForm2 {
+    margin-right: 15%;
+}
+
+#greenWspImg {
+    width: 1.5%;
+}
+
+#greenWsp {
+    color: #56b85a;
+    font-family: 'open sans hebrew', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    margin-bottom: -2%;
+}
+
+#insteadGreenWsp {
+    font-family: 'open sans hebrew', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    display: none;
+    margin-bottom: -2%;
+}
+
+#time2 {
+    font-size: 14px;
+    padding: 0.6%;
+    border: 0.2px solid rgba(102, 102, 102, 0.368);
+    border-radius: 6px;
+    width: 19.5%;
+    font-family: 'open sans hebrew', sans-serif;
+    margin-top: -4.2%;
+    color: #ffa126;
+    margin-right: 22%;
+    display: none;
+}
+
+#date2 {
+    font-size: 14px;
+    padding: 0.6%;
+    border: 0.2px solid rgba(102, 102, 102, 0.368);
+    border-radius: 6px;
+    width: 19.5%;
+    font-family: 'open sans hebrew', sans-serif;
+    margin-top: 1%;
+    color: #ffa126;
+    display: none;
+}
+
+#fromGift2 {
+    font-size: 14px;
+    padding: 0.8%;
+    border: 0.2px solid rgba(102, 102, 102, 0.368);
+    border-radius: 6px;
+    width: 19%;
+    font-family: 'open sans hebrew', sans-serif;
+    margin-top: 1%;
+    color: rgba(134, 132, 132, 0.082);
+}
+
+#input-email {
+    position: absolute;
+    display: none;
+    font-size: 14px;
+    padding: 0.6%;
+    border: 0.2px solid rgba(102, 102, 102, 0.368);
+    border-radius: 6px;
+    width: 8%;
+    font-family: 'open sans hebrew', sans-serif;
+    margin-right: -2%;
+
+    
+    color: rgb(134, 132, 132);
+
+}
+
+#input-sms {
+    position: absolute;
+    display: none;
+    font-size: 14px;
+    padding: 0.6%;
+    border: 0.2px solid rgba(102, 102, 102, 0.368);
+    border-radius: 6px;
+    width: 8%;
+    font-family: 'open sans hebrew', sans-serif;
+    color: rgb(134, 132, 132);
+    margin-right: -2%;
+}
+
+#nonePrint {
+    position: absolute;
+    font-size: 12px;
+    font-weight: 500;
+    display: none;
+    margin-right: -2%;
+    margin-top: -0.1%;
+}
+
+#continueStep2 {
+    font-family: 'open sans hebrew', sans-serif;
+    border: none;
+    border-radius: 4px;
+    font-size: 120%;
+    background-color: #ffa126;
+    color: white;
+    font-weight: bold;
+    padding: 1%;
+    width: 43%;
+    margin-top: -5%;
+}
+
+/* עיצוב דף תשלום STEP 3 */
+#continueStep3 {
+    font-family: 'open sans hebrew', sans-serif;
+    border: none;
+    border-radius: 4px;
+    font-size: 120%;
+    background-color: #ffa126;
+    color: white;
+    font-weight: bold;
+    padding: 1%;
+    margin-top: 0.5%;
+    width: 43%;
+}
+
+#payForm3 {
+    margin-right: 15%;
+}
+
+#per3 {
+    display: none;
+}
+
+#per3+label {
+    display: inline-block;
+    width: 18.5px;
+    height: 18.5px;
+    border-radius: 50%;
+    border: 2px solid orange;
+    transform: translateY(180%);
+}
+
+#per3:checked+label::before {
+    content: "\2713";
+    display: block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+    font-size: 16px;
+    background-color: orange;
+    border-radius: 50%;
+}
+
+#per3P a {
+    color: #ffa126;
+}
+
+#per3P {
+    margin-right: 2.5%;
+    font-family: 'open sans hebrew', sans-serif;
+    font-size: 14px;
+}
+
+#btnPayPal {
+    border: 1px solid #33333362;
+    border-radius: 6px;
+    background-color: white;
+    color: #333;
+    width: 43%;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    font-family: 'Open Sans Hebrew', sans-serif;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2%;
+    padding-left: 32%;
+}
+
+#btnPayPal img {
+    width: auto;
+}
+
+#btnCreditCard {
+    border: 1px solid #33333362;
+    border-radius: 6px;
+    background-color: white;
+    color: #333;
+    width: 43%;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    font-family: 'Open Sans Hebrew', sans-serif;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2%;
+    padding-left: 29%;
+}
+
+#btnCreditCard img {
+    width: auto;
+}
+
+#btnCreditCard:hover {
+    border: 1px solid #ffa126;
+}
+
+#btnPayPal:hover {
+    border: 1px solid #ffa126;
+}
+
+#step2 {
+    display: none;
+}
+
+#step3 {
+    display: none;
+}
+
+#payForm3 p:first-child {
+    font-size: larger;
+    margin-bottom: -2%;
+    background-color: #dcdcdc;
+    margin-left: 57%;
+    border-radius: 5px;
+    padding: 0.5%;
+}
+
+#total {
+    font-weight: bold;
+}
+
+#endPay {
+    position: fixed;
+    display: none;
+    padding: 8%;
+    background-color: rgb(198, 198, 198);
+    width: 25%;
+    border-radius: 8px;
+    text-align: center;
+    margin-right: 28%;
+    z-Index: 9999999;
+    margin-top: -40%;
+}
+
+#endPay h1 {
+    font-weight: 500;
+    color: #767676;
+}
+
+#endPay a {
+    color: #767676;
+}
+
+/* אחרי הפוטר */
+
+#afterFooter img {
+    padding: 0.8%;
+}
+
+#afterFooter {
+    padding-right: 10%;
+    background-color: white;
+    margin-top: 20%;
+    border-top: solid 0.5px rgba(192, 192, 192, 0.196);
+}
+
+#c {
+    margin-right: 50%;
+}
+
+/* חלוניות קופצות */
+/* חלונית כניסה */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 99999999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.817);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    padding: 2%;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    border-radius: 8px;
+    margin: 8% auto;
+}
+
+.close {
+    border: none;
+    background: none;
+    font-size: 20px;
+    color: #888;
+    float: right;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+}
+
+#enter {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #ffa126;
+    color: white;
+    font-weight: bold;
+    font-family: 'open sans hebrew', sans-serif;
+    cursor: pointer;
+    width: 100%;
+    max-width: 250px;
+    margin-top: 1%;
+
+}
+
+#userName,
+#password {
+    width: 100%;
+    max-width: 250px;
+    height: 28.5px;
+    font-size: 15px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'open sans hebrew', sans-serif;
+    margin-top: 1.2%;
+
+}
+
+#notValid {
+    display: none;
+    color: red;
+    font-size: 16px;
+    font-family: 'open sans hebrew', sans-serif;
+}
+
+
+/* חלונית הרשמה */
+.modalReg {
+    display: none;
+    position: fixed;
+    z-index: 9999999999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.817);
+}
+
+.modalReg-content {
+    background-color: #fefefe;
+    padding: 2%;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    border-radius: 8px;
+    margin: 8% auto;
+}
+
+.closeReg {
+    border: none;
+    background: none;
+    font-size: 20px;
+    color: #888;
+    float: right;
+    cursor: pointer;
+}
+
+.closeReg:hover,
+.closeReg:focus {
+    color: black;
+    text-decoration: none;
+}
+
+#registerBtn {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: #ffa126;
+    color: white;
+    font-weight: bold;
+    font-family: 'open sans hebrew', sans-serif;
+    cursor: pointer;
+    width: 100%;
+    max-width: 250px;
+    margin-top: 10px;
+}
+
+#phoneReg,
+#emailReg {
+    width: 100%;
+    max-width: 250px;
+    height: 28.5px;
+    font-size: 15px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'open sans hebrew', sans-serif;
+    margin-top: 10px;
+}
+
+#registerForm p {
+    font-size: 12px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+#agree,
+#per {
+    display: none;
+}
+
+#agree+label,
+#per+label {
+    display: inline-block;
+    width: 18.5px;
+    height: 18.5px;
+    border-radius: 50%;
+    border: 2px solid orange;
+    position: relative;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+#agree:checked+label::before,
+#per:checked+label::before {
+    content: "\2713";
+    display: block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+    font-size: 16px;
+    background-color: orange;
+    border-radius: 50%;
+}
+
+#modalReg p a {
+    color: #ffa126;
+    text-decoration: underline;
+}
+
+/* חלונית תשלום */
+/* בסיסי לחלונית */
+.modalPay {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: auto;
+    z-index: 9999999999999;
+}
+
+/* עיצוב תוכן החלונית */
+.modalPay-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%;
+    max-width: 400px;
+    position: relative;
+    box-sizing: border-box;
+    padding-left: 2%;
+}
+
+/* עיצוב החלק העליון של החלונית */
+.modalPay-content h1 {
+
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+    font-weight: 500;
+    margin-top: -8%;
+    margin-bottom: -2%;
+}
+
+#headPay {
+    background-color: #f0f0f0;
+    margin: -20px -20px 20px -20px;
+    padding: 15px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 5%;
+    margin-right: -24%;
+    margin-left: -10%;
+}
+
+#closePayForm {
+    border: none;
+    background: none;
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+    top: 10px;
+    right: 10px;
+}
+
+
+
+/* עיצוב שדות הטופס */
+form label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #666;
+    font-size: 14px;
+}
+
+form input {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+input[name="validity"] {
+    width: calc(50% - 10px);
+}
+
+input[name="cvv"] {
+    width: 48%;
+}
+
+input[name="identity"],
+input[name="nameCard"] {
+    width: 100%;
+}
+
+#addCard {
+    background-color: #ffa126;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+}
+
+
+@media(max-width: 750px) and (min-width: 400px) {
+
+
+    #headerLogo {
+        width: 8%;
+    }
+
+    #login {
+        margin-left: 100%;
+        width: 17%;
+        margin-top: 12%;
+    }
+
+    #exit {
+        margin-right: -70%;
+    }
+
+    .overlayText {
+        height: 30%;
+        font-size: 12px;
+    }
+
+    .picturePay {
+        width: 35%;
+        margin-right: 60%;
+        margin-top: -80%;
+
+    }
+
+    #afterFooter {
+        width: 90%;
+
+    }
+
+    #c {
+        margin-left: -35%;
+    }
+
+}

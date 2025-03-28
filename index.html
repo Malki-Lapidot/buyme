@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>buyme</title>
+    <link rel="stylesheet" href="./home.css">
+    <link rel="icon" href="./image/headerLogo.png">
+</head>
+
+<body>
+    <!-- ראש העמוד -->
+    <header>
+        <nav>
+            <a href="./index.html"><img src="./image/headerLogo.png" alt="headerLogo" id=headerLogo></a>
+            <div id="links">
+                <a href="#" onclick="superBreaker();">קיבלתי סופר שובר</a>
+                <a href="#" onclick="cheackCode();">בדיקת יתרה בGift Card</a>
+            </div>
+            <a id="linkGift" href="./about.html">מה מאחורי האתר</a>
+            <button type="button" id="login">כניסה / הרשמה</button>
+            <button id="exit" type="button">יציאה</button>
+        </nav>
+        <img id="pictureOpen" src="./image/buy_me_b.jpg" alt="image פתיחה">
+    </header>
+    <!-- חלונית סל -->
+    <div id="myBag"></div>
+
+
+    <!-- טופס חיפוש -->
+    <form id="search">
+        <select name="price" id="price" class="searchInput">
+            <option value="">סכום</option>
+            <option value="0">עד 99 ש"ח</option>
+            <option value="100">100-199 ש"ח</option>
+            <option value="200">200-299 ש"ח</option>
+            <option value="300">300-499 ש"ח</option>
+            <option value="500">500-750 ש"ח</option>
+            <option value="750">מעל 750 ש"ח</option>
+        </select>
+
+        <select name="area" id="area" class="searchInput">
+            <option value="">אזור</option>
+            <option value="מרכז">מרכז</option>
+            <option value="תל אביב">תל אביב</option>
+            <option value="צפון">צפון</option>
+            <option value="דרום">דרום</option>
+            <option value="ירושלים">ירושלים</option>
+            <option value="חיפה">חיפה</option>
+            <option value="השרון">השרון</option>
+            <option value="אילת">אילת</option>
+            <option value="פריסה ארצית">פריסה ארצית</option>
+
+        </select>
+
+        <select name="category" id="category" class="searchInput">
+            <option value="">קטגוריה</option>
+            <option value="גיפט קארד לארוחת בוקר ובתי קפה">גיפט קארד לארוחת בוקר ובתי קפה</option>
+            <option value="גיפט קארד למסעדות">גיפט קארד למסעדות</option>
+            <option value="גיפט קארד לבית, מטבח וגאדג'טים">גיפט קארד לבית, מטבח וגאדג'טים</option>
+            <option value="גיפט קארד ליופי וטיפוח">גיפט קארד ליופי וטיפוח</option>
+            <option value="גיפט קארד למותגי אופנה">גיפט קארד למותגי אופנה</option>
+            <option value="גיפט קארד לנופש ומלונות">גיפט קארד לנופש ומלונות</option>
+            <option value="מתנות מעסיקים קטנים">מתנות מעסיקים קטנים</option>
+            <option value="המתנות האהובות לצוות החינוכי">המתנות האהובות לצוות החינוכי</option>
+            <option value="מתנות במימוש אונליין">מתנות במימוש אונליין</option>
+            <option value="המתנות האהובות של 2024">המתנות האהובות של 2024</option>
+            <option value="גיפט קארד למתנות יולדות וצעצועים">גיפט קארד למתנות יולדות וצעצועים</option>
+            <option value="גיפט קארד למסעדות שף">גיפט קארד למסעדות שף</option>
+            <option value="גיפט קארד לבתי ספא">גיפט קארד לבתי ספא</option>
+            <option value="גיפט קארד לסדנאות והעשרה">גיפט קארד לסדנאות והעשרה</option>
+            <option value="גיפט קארד לתרבות ופנאי">גיפט קארד לתרבות ופנאי</option>
+            <option value="גיפט קארד לתרבות,ספורט ואקסטרים">גיפט קארד לתרבות,ספורט ואקסטרים</option>
+            <option value="גיפט קארד לחוויות משותפות">גיפט קארד לחוויות משותפות</option>
+            <option value="גיפט קארד למתנות קולינאריות">גיפט קארד למתנות קולינאריות</option>
+        </select>
+
+        <input type="text" id="giftFor" name="giftFor" placeholder="כאן אפשר לחפש מתנה">
+
+        <button id="findGift" type="submit">תמצאו לי מתנה</button>
+        <a href="" id="clear" type="reset">✕ נקה חיפוש </a>
+    </form>
+
+
+    <!-- כפתורי חיפוש -->
+    <div id="searchButton">
+        <button id="btnSearch1" type="submit">מתנות סוף שנה</button>
+        <button id="btnSearch2" type="submit">מתנות ליום הולדת</button>
+        <button id="btnSearch3" type="submit">מתנות לידה </button>
+        <button id="btnSearch4" type="submit">מתנות תודה</button>
+        <button id="btnSearch5" type="submit">מתנות לעובדים</button>
+        <a href="./index.html" id="headerGift"><img src="./image/category_ruler_button.png"></a>
+        <a href="#" id="headerLink" onclick="allCards();">BUYME ALL<img src="./image/חץ.png"
+                width="1.1%"></a>
+    </div>
+
+
+
+
+    <!-- קישורי image -->
+    <div class="container">
+
+        <a href="#" onclick="searchByPicture('גיפט קארד למותגי אופנה');return false;">
+            <div class="picture">
+                <img src="./image/50.jpg" alt="Image" class="imageP">
+                <div class="overlayText">
+                    <p>גיפט קארד למותגי אופנה</p>
+                </div>
+            </div>
+        </a>
+        <a href="#" onclick="searchByPicture('גיפט קארד למסעדות');return false;">
+
+            <div class="picture">
+                <img src="./image/20.jpg" alt="Image" class="imageP">
+                <div class="overlayText">
+                    <p>גיפט קארד למסעדות</p>
+                </div>
+            </div>
+        </a>
+
+        <a href="#" onclick="searchByPicture('גיפט קארד לארוחת בוקר ובתי קפה');return false;">
+
+            <div class="picture">
+                <img src="./image/10.jpg" alt="Image" class="imageP">
+                <div class="overlayText">
+                    <p>גיפט קארד לארוחת בוקר ובתי קפה</p>
+                </div>
+            </div>
+        </a>
+
+        <a href="#" onclick="searchByPicture('גיפט קארד ליופי וטיפוח');return false;">
+
+            <div class="picture">
+                <img src="./image/40.jpg" alt="Image" class="imageP">
+                <div class="overlayText">
+                    <p>גיפט קארד ליופי וטיפוח</p>
+                </div>
+            </div>
+        </a>
+        <a href="#" onclick="searchByPicture('גיפט קארד לנופש ומלונות');return false;">
+
+            <div class="picture">
+                <img src="./image/60.webp" alt="Image" class="imageP">
+                <div class="overlayText">
+                    <p>גיפט קארד לנופש ומלונות</p>
+                </div>
+            </div>
+        </a>
+        <a href="#" onclick="searchByPicture(`גיפט קארד לבית,מטבח וגאדג'טים`);return false;">
+
+            <div class="picture">
+                <img src="./image/30.jpg" alt="Image" class="imageP">
+                <div class="overlayText">
+                    <p>גיפט קארד לבית,מטבח וגאדג'טים</p>
+                </div>
+            </div>
+        </a>
+
+        <a href="#" onclick="searchByPicture('המתנות האהובות לצוות החינוכי');return false;">
+            <div class="picture">
+                <img src="./image/80.jpg" alt="Image" class="imageP">
+                <div class="overlayText">
+                    <p>המתנות האהובות לצוות החינוכי</p>
+                </div>
+            </div>
+        </a>
+
+        <a href="#" onclick="searchByPicture('מתנות במימוש אונליין');return false;">
+            <div class="picture">
+                <img src="./image/90.jpg" alt="Image" class="imageP">
+                <div class="overlayText">
+                    <p>מתנות במימוש אונליין</p>
+                </div>
+            </div>
+        </a>
+        <a href="#" onclick="searchByPicture('המתנות האהובות של 2024');return false;">
+
+            <div class="picture">
+                <img src="./image/100.jpg" alt="Image" class="imageP">
+                <div class="overlayText">
+                    <p>המתנות האהובות של 2024</p>
+                </div>
+            </div>
+        </a>
+
+        <a href="#" onclick="searchByPicture('מתנות מעסיקים קטנים');return false;">
+
+            <div class="picture">
+                <img src="./image/70.jpg" alt="Image" class="imageP">
+                <div class="overlayText">
+                    <p>מתנות מעסיקים קטנים</p>
+                </div>
+            </div>
+        </a>
+
+
+
+        <a href="#" onclick="searchByPicture('גיפט קארד למתנות יולדות וצעצועים');return false;">
+
+            <div class="picture">
+                <img src="./image/110.jpg" alt="Image" class="imageP">
+                <div class="overlayText">
+                    <p>גיפט קארד למתנות יולדות וצעצועים</p>
+                </div>
+            </div>
+        </a>
+
+        <a href="#" onclick="searchByPicture('גיפט קארד למסעדות שף');return false;">
+
+            <div class="picture">
+                <img src="./image/120.jpg" alt="Image" class="imageP">
+                <div class="overlayText">
+                    <p>גיפט קארד למסעדות שף</p>
+                </div>
+            </div>
+        </a>
+
+
+
+        <a href="#" onclick="searchByPicture('גיפט קארד לבתי ספא');return false;">
+
+            <div class="picture">
+                <img src="./image/130.jpg" alt="Image" class="imageP">
+                <div class="overlayText">
+                    <p>גיפט קארד לבתי ספא</p>
+                </div>
+            </div>
+        </a>
+
+
+
+        <a href="#" onclick="searchByPicture('גיפט קארד לסדנאות והעשרה');return false;">
+
+            <div class="picture">
+                <img src="./image/140.jpg" alt="Image" class="imageP">
+                <div class="overlayText">
+                    <p>גיפט קארד לסדנאות והעשרה</p>
+                </div>
+            </div>
+        </a>
+
+        <a href="#" onclick="searchByPicture('גיפט קארד לתרבות ופנאי');return false;">
+
+            <div class="picture">
+                <img src="./image/150.jpg" alt="Image" class="imageP">
+                <div class="overlayText">
+                    <p>גיפט קארד לתרבות ופנאי</p>
+                </div>
+            </div>
+        </a>
+
+
+
+        <a href="#" onclick="searchByPicture('גיפט קארד לתרבות,ספורט ואקסטרים');return false;">
+
+            <div class="picture">
+                <img src="./image/160.jpg" alt="Image" class="imageP">
+                <div class="overlayText">
+                    <p>גיפט קארד לתרבות,ספורט ואקסטרים</p>
+                </div>
+            </div>
+        </a>
+
+        <a href="#" onclick="searchByPicture('גיפט קארד לחוויות משותפות');return false;">
+
+            <div class="picture">
+                <img src="./image/170.jpg" alt="Image" class="imageP">
+                <div class="overlayText">
+                    <p>גיפט קארד לחוויות משותפות</p>
+                </div>
+            </div>
+        </a>
+
+        <a href="#" onclick="searchByPicture('גיפט קארד למתנות קולינאריות');return false;">
+
+            <div class="picture">
+                <img src="./image/180.jpg" alt="Image" class="imageP">
+                <div class="overlayText">
+                    <p>גיפט קארד למתנות קולינאריות</p>
+                </div>
+            </div>
+        </a>
+    </div>
+
+
+
+    <div id="beforeFooter">
+        <div>
+            <img src="./image/עוגת יומולדת.svg" alt="">
+            <h3>מתנות יום הולדת שוות!</h3>
+            <p>הראו לאהובים ביום המיוחד שלהם שאין כמוהם בעולם. בוחרים, מוסיפים תמונה וברכה אישית ושולחים ישירות לנייד
+            </p>
+            <a href="#" onclick="searchByLink('מתנות ליום הולדת');">מתנות ליום הולדת <img src="./image/חץ.png"
+                    width="7%"></a>
+        </div>
+        <div>
+            <img src="./image/מתנה.svg" alt="">
+            <h3>מחפשים מתנה לגבר?</h3>
+            <p>אצלנו תמצאו מגוון של מתנות וחוויות מושלמות לגבר. כל שנותר לכם הוא לבחור את המתנה ולסמוך עלינו שתקבלו תודה
+                ענקית</p>
+            <a href="#" onclick="searchByLink('מתנות לגבר');">מתנות לגבר <img src="./image/חץ.png" width="7%"></a>
+        </div>
+        <div>
+            <img src="./image/חברים.svg" alt="">
+            <h3>רוצים להעניק לעובדים מתנה שתשמח באמת?</h3>
+            <p>יש לנו בול את מה שאתם מחפשים! בואו לגלות מהן המתנות והחוויות שהעובדים שלכם הכי ישמחו לקבל</p>
+            <a href="#" onclick="searchByLink('מתנות לעובדים');">מתנות לעובדים <img src="./image/חץ.png"
+                    width="7%"></a>
+        </div>
+        <div>
+            <img src="./image/עגלת תינוק.svg" alt="">
+            <h3>מתנה ליולדת זה תמיד מרגש!</h3>
+            <p>טיפול ספא, יוגה עם הבייבי, או דייט מרגש עם אבוש מתנות מפנקות שמתאימות בול לאחרי הלידה</p>
+            <a href="#" onclick="searchByLink('מתנות ליולדת');">מתנות ליולדת <img src="./image/חץ.png" width="7%"></a>
+        </div>
+    </div>
+
+    <!-- פוטר -->
+    <footer>
+        <div id="sectionFooter">
+            <div class="column">
+                <h3>דברו איתנו</h3><br>
+                <a href="" class="detail">support@buyme.co.il</a><br><br>
+                <a href="" class="detail">03-3737117</a><br><br>
+                <p id="hours">א'-ה' 9:00-21:00<br>
+                    ו' 9:00-15:00 (שעון חורף)</p>
+
+            </div>
+            <div class="column">
+                <h3>BUYME</h3><br>
+                <a href="">כניסת בתי עסק - שותפים</a><br><br>
+                <a href="./about.html">אודות</a><br><br>
+                <a href="">Careers</a><br><br>
+                <a href="">תקנון האתר</a><br><br>
+                <a href="">מדיניות הגנת פרטיות</a><br><br>
+                <a href="">הצהרת נגישות</a><br><br>
+            </div>
+            <div class="column">
+                <h3>כל מה שחשוב</h3><br>
+                <a href="">שאלות ותשובות</a><br><br>
+                <a href="">טיפים למתנות שוות</a><br><br>
+                <a href="">רשתות BUYME ALL</a><br><br>
+                <a href="">רשתות BUYME MULTI</a>
+            </div>
+            <div class="column" id="col3">
+                <h3>רעיונות למתנות וחוויות</h3><br>
+                <p>עם הניוזלטר של BUYME יהיו לך תמיד רעיונות מפתיעים למתנות וחוויות<br>
+                    אנחנו מבטיחים לשלוח לך רק מה שמעניין ולא להעמיס.</p>
+                <input type="email" id="eemail" name="eemail" placeholder="כתובת המייל שלך"
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="אנא הזן כתובת מייל תקינה" required>
+                <button id="noneBTN">תעדכנו אותי, כן?</button><br><br>
+                <input type="checkbox" id="checkbox">
+                <label for="checkbox" class="circle-label">כאן מאשרים קבלת דואר פרסומי</label>
+            </div>
+        </div>
+    </footer>
+
+    <!-- מתחת לפוטר -->
+    <div id="afterFooter">
+        <a href=""><img src="./image/סימן שאלה.svg" alt=""></a>
+        <a href=""><img src="./image/תיבת מייל.svg" alt=""></a>
+        <a href=""><img src="./image/טלפון.svg" alt=""></a>
+        <a href=""><img src="./image/טלפון (2).svg" alt=""></a>
+        <a href=""><img src="./image/מצלמה.svg" alt=""></a>
+        <img src="./image/c.png" id="c" width="8%">
+        <img src="./image/pci.png">
+        <img src="./image/לוגו!.svg" width="3.5%">
+    </div>
+
+
+    <!-- חלוניות קופצות -->
+    <!-- חלונית כניסה -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <form id="enterForm">
+                <button class="close">✕</button>
+                <h1>היי, טוב לראות אותך!</h1><br>
+                <h3>הכנס שם וסיסמה</h3><br>
+
+                <input type="text" id="userName" name="name" placeholder="שם מלא"><br />
+                <input type="password" id="password" name="password" placeholder="סיסמה"
+                    pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}"
+                    title="הסיסמה חייבת להכיל לפחות אות קטנה אחת, אות גדולה אחת ומספר אחד 6-12 תוים" required><br>
+                <p id="notValid">הסיסמה שגויה</p>
+                <button type="submit" id="enter">הכנס</button>
+            </form>
+        </div>
+    </div>
+    <!-- חלונית הרשמה -->
+
+    <div id="modalReg" class="modalReg">
+        <div class="modalReg-content">
+            <form id="registerForm">
+                <button class="closeReg">✕</button>
+                <h2>רק עוד כמה פרטים וסיימנו</h2><br>
+                <input type="email" id="emailReg" name="email" placeholder="מייל"
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="אנא הזן כתובת מייל תקינה"
+                    required><br><br />
+                <input type="text" id="phoneReg" name="phone" placeholder="טלפון נייד"><br>
+                <p>הנייד יעזור לנו שהמתנה לא תלך לאיבוד</p>
+                <input type="checkbox" name="agree" id="agree">
+                <label for="agree"></label>
+                <p>אני מסכימ/ה <a href="./privacy.html">למדיניות הפרטיות </a><a href="./Terms.html">ולתנאי
+                        השימוש</a><br> ב-BUYME שתאסוף עלי מידע לצורך תפעול שוברי<br> המנה.</p><br>
+                <input type="checkbox" name="per" id="per">
+                <label for="per"></label>
+                <p>אישור קבלת דיוור פירסומי מ-BUYME,בכל מדיה.<br>מבטיחים לשלוח רק מה שמעניין :)</p><br>
+                <button type="submit" id="registerBtn">הרשמה</button>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- טיימר -->
+    <div id="modalTimer" class="modalTimer">
+
+        <div class="modalTimer-content">
+            <button id="closeTimer">✕</button>
+            <h1>שומעים רגע?</h1><br>
+            <p>אנחנו שולחים מיילים כיפיים! כאלה<br>
+                שאשכרה בא לכם לפתוח 😎</p><br><br>
+            <input type="email" id="emailTimer" name="emailTimer" required placeholder="דואר אלקטרוני"><br><br>
+            <button id="timerBtn">עשיתם לי חשק-תרשמו אותי</button>
+        </div>
+    </div>
+    <!-- אישור אחרי טיימר -->
+    <div id="modalAfterTimer" class="modalAfterTimer">
+
+        <div class="modalAfterTimer-content">
+            <button id="closeAfterTimer">✕</button>
+            <h1>איזה כיף לנו!</h1>
+            <h3>מחכים כבר לשלוח לך את התוכן הכי שווה</h3>
+        </div>
+    </div>
+    <!-- חלונית כחולה טיימר -->
+    <div id="modalTimerBlue" class="modalTimerBlue">
+        <div class="modalTimerBlue-content">
+            <img src="./image/bright-logo.png" id="Bruce" alt=""><br><br>
+            <img src="./image/orange circle.png" id="g1" alt="">
+            <img src="./image/orange circle.png" id="g2" alt="">
+            <img src="./image/orange circle.png" id="g3" alt="">
+        </div>
+    </div>
+    <!--  שקופצת מהגלילה -חלונית החיפוש -->
+    <div id="searchPopup" class="search-popup">
+        <div class="search-popup-content">
+            <form id="searchFormPopup">
+                <select name="price" id="price" class="searchInput">
+                    <option value="">סכום</option>
+                    <option value="0">עד 99 ש"ח</option>
+                    <option value="100">100-199 ש"ח</option>
+                    <option value="200">200-299 ש"ח</option>
+                    <option value="300">300-499 ש"ח</option>
+                    <option value="500">500-750 ש"ח</option>
+                    <option value="750">מעל 750 ש"ח</option>
+                </select>
+
+                <select name="area" id="area" class="searchInput">
+                    <option value="">אזור</option>
+                    <option value="מרכז">מרכז</option>
+                    <option value="תל אביב">תל אביב</option>
+                    <option value="צפון">צפון</option>
+                    <option value="דרום">דרום</option>
+                    <option value="ירושלים">ירושלים</option>
+                    <option value="חיפה">חיפה</option>
+                    <option value="השרון">השרון</option>
+                    <option value="אילת">אילת</option>
+                    <option value="פריסה ארצית">פריסה ארצית</option>
+
+                </select>
+
+                <select name="category" id="category" class="searchInput">
+                    <option value="">קטגוריה</option>
+                    <option value="גיפט קארד לארוחת בוקר ובתי קפה">גיפט קארד לארוחת בוקר ובתי קפה</option>
+                    <option value="גיפט קארד למסעדות">גיפט קארד למסעדות</option>
+                    <option value="גיפט קארד לבית, מטבח וגאדג'טים">גיפט קארד לבית, מטבח וגאדג'טים</option>
+                    <option value="גיפט קארד ליופי וטיפוח">גיפט קארד ליופי וטיפוח</option>
+                    <option value="גיפט קארד למותגי אופנה">גיפט קארד למותגי אופנה</option>
+                    <option value="גיפט קארד לנופש ומלונות">גיפט קארד לנופש ומלונות</option>
+                    <option value="מתנות מעסיקים קטנים">מתנות מעסיקים קטנים</option>
+                    <option value="המתנות האהובות לצוות החינוכי">המתנות האהובות לצוות החינוכי</option>
+                    <option value="מתנות במימוש אונליין">מתנות במימוש אונליין</option>
+                    <option value="המתנות האהובות של 2024">המתנות האהובות של 2024</option>
+                    <option value="גיפט קארד למתנות יולדות וצעצועים">גיפט קארד למתנות יולדות וצעצועים</option>
+                    <option value="גיפט קארד למסעדות שף">גיפט קארד למסעדות שף</option>
+                    <option value="גיפט קארד לבתי ספא">גיפט קארד לבתי ספא</option>
+                    <option value="גיפט קארד לסדנאות והעשרה">גיפט קארד לסדנאות והעשרה</option>
+                    <option value="גיפט קארד לתרבות ופנאי">גיפט קארד לתרבות ופנאי</option>
+                    <option value="גיפט קארד לתרבות,ספורט ואקסטרים">גיפט קארד לתרבות,ספורט ואקסטרים</option>
+                    <option value="גיפט קארד לחוויות משותפות">גיפט קארד לחוויות משותפות</option>
+                    <option value="גיפט קארד למתנות קולינאריות">גיפט קארד למתנות קולינאריות</option>
+                </select>
+
+
+                <input type="text" id="giftFor" name="giftFor" placeholder="כאן אפשר לחפש מתנה">
+
+                <button id="findGift" type="submit">תמצאו לי מתנה</button>
+                <a href="" id="clear" type="reset"><img src="./image/X.svg">נקה חיפוש </a>
+            </form>
+        </div>
+    </div>
+    <!-- חלונית קיבלתי גיפט קארד -->
+    <div id="modalSuperCard" class="modalSuperCard">
+        <div class="modalSuperCard-content">
+            <div id="navSuper">
+                <button id="closeSuper">✕</button>
+                <p>סופר שובר</p>
+            </div>
+            <img src="./image/gifts_love_comments.svg" alt="">
+            <h1>קיבלת סופר שובר? מדהים!</h1>
+            <p>מה עושים עכשיו?</p>
+            <p>1. מזינים כאן את הקוד</p>
+            <p>2. בוחרים מתנה מהמגוון האדיר באתר</p>
+            <p>3. במעמד התשלום, משלמים עם היתרה שלי</p>
+            <label for="numberCard">מה הקוד שקיבלת?</label><br>
+            <input type="text" id="numberCard" name="numberCard">
+            <p id="noneText">המספר שהזנת לא תקין</p>
+            <button id="addSum">להוספת הסכום ליתרה שלי</button>
+        </div>
+    </div>
+    <!-- בדיקת יתרה חלונית-->
+    <div id="modalCheck" class="modalCheck">
+        <div class="modalCheck-content">
+            <div id="navCheck">
+                <button id="closeCheck">✕</button>
+                <p>בדיקת יתרה בשובר</p>
+            </div>
+            <img src="./image/hero_popup_gift_check_v2.svg">
+            <form id="registerFormCheck">
+                <label for="codeCheck">מה הקוד של השובר?</label>
+                <label for="dateCheck">מה התוקף של השובר?</label><br>
+                <input id="numberCheck" name="codeCheck" type="text" placeholder="1234-1234-1234-1234">
+
+                <input id="dateCheck" name="dateCheck" type="date"><br>
+                <button id="moneyCheck" type="submit">לבדיקת היתרה</button>
+                <p id="noneText2">אחד או יותר מהפרטים שהזנת שגויים</p>
+            </form>
+        </div>
+    </div>
+
+
+
+    <script src="./jquery-3.2.1.js"></script>
+    <script src="./home.js"></script>
+</body>
+
+</html>

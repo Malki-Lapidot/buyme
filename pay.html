@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>buyme</title>
+    <link rel="stylesheet" href="./pay.css">
+    <link rel="icon" href="./image/headerLogo.png">
+
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <a href="./index.html"><img src="./image/headerLogo.png" alt="headerLogo" id=headerLogo></a>
+            <button id="login">כניסה / הרשמה</button>
+            <button id="exit" type="button">יציאה</button>
+        </nav><br>
+        <a id="goBackPay" href="">חזור</a>
+        <h1>רכישת מתנה</h1><br>
+        <div id="circle1">1</div>
+        <div id="circle2">2</div>
+        <div id="circle3">3</div>
+    </header>
+    <!-- חלונית סל -->
+    <div id="myBag"></div>
+
+    <section>
+
+
+        <div id="step1">
+            <form id="payForm">
+                <label id="forGift" for="forGift">למי המתנה?</label><br><br>
+                <div id="selectFor">
+                    <button id="btnForOther" type="button">למישהו אחר</button>
+                    <button id="btnForMe" type="button">לעצמי</button>
+                </div>
+                <br><br>
+                <div id="forOther">
+                    <label id="labelNameLabel" for="nameGet">שם מקבל המתנה</label>
+                    <label id="reasonLabel" for="reason">מה חוגגים? נעזור לך לכתוב ברכה</label><br>
+                    <input type="text" id="nameGet" name="nameGet">
+
+                    <select name="reason" id="reason">
+                        <option value="">לאיזה אירוע?</option>
+                        <option value="יום הולדת">יום הולדת</option>
+                        <option value="מתנה לגננת לסוף השנה">מתנה לגננת לסוף השנה</option>
+                        <option value="מתנות סוף שנה">מתנות סוף שנה</option>
+                        <option value="לידה">לידה</option>
+                        <option value="תודה">תודה</option>
+                        <option value="כניסה לבית חדש">כניסה לבית חדש</option>
+                        <option value="מתנה למורה לסוף השנה">מתנה למורה לסוף השנה</option>
+                        <option value="מילואים">מילואים</option>
+                        <option value="גיוס">גיוס</option>
+                        <option value="אירוסין">אירוסין</option>
+                        <option value="יום נישואין">יום נישואין</option>
+                        <option value="הפרשת חלה">הפרשת חלה</option>
+                        <option value="שחרור">שחרור</option>
+                        <option value="חתונה">חתונה</option>
+                        <option value="פרידה">פרידה</option>
+                        <option value="חינה">חינה</option>
+                        <option value="בר מצווה">בר מצווה</option>
+                        <option value="בת מצווה">בת מצווה</option>
+                        <option value="החלמה מהירה">החלמה מהירה</option>
+                        <option value="סתם כי בא לי לפנק">סתם כי בא לי לפנק</option>
+                        <option value="בהצלחה">בהצלחה</option>
+                        <option value="מתנות לעובדים">מתנות לעובדים</option>
+                    </select><br><br><br>
+                    <p id="Divider">__________________________________________________________________</p>
+                    <label id="brachaLabel" for="bracha">ברכה</label><br>
+                    <textarea name="bracha" id="bracha" cols="30" rows="10"
+                        placeholder="מזל טוב, תודה רבה או פשוט מלא אהבה? כאן כותבים מילים טובות ואיחולים שמחים"></textarea><br>
+
+                    <div id="addFilsAll">
+                        <p id="addFile">צלמו או הוסיפו image וסרטון <span>(עד 8MB)</span></p>
+                        <div id="addImg">
+                            <label class="btnAddMedia" id="fileLabelImage" for="fileInputImage">
+                                <img src="./image/הוספת תמונה (1).png" alt="" width="80%">
+                            </label>
+                            <input type="file" id="fileInputImage" name="pictureInput" accept="image/*,video/*"
+                                style="display: none;">
+                        </div>
+
+
+                        <div id="addMedia">
+                            <label class="btnAddMedia" id="fileLabelVideo">
+                                <img src="./image/הוספת סרטון מוכן.png" alt="" width="80%">
+                            </label>
+                            <p id="pictureOrVideo">תמונה /ווידאו</p>
+                            <p id="videoReady">סרטונים מוכנים</p>
+                        </div>
+                        <div id="imagePreview" style="display: none;">
+                            <button class="remove-btn" id="removeImageBtn" type="button">✕</button>
+                            <img id="previewImage" src="" alt="Preview">
+                        </div>
+                        <div id="mediaPreview" style="display: none;">
+                            <button class="remove-btn" id="removeVideoBtn" type="button">✕</button>
+                            <video id="previewVideo" controls></video>
+                        </div>
+
+                    </div>
+
+                    <!-- The Modal -->
+                    <div id="videoModal">
+                        <div id="modalContent">
+                            <span class="modal-close" id="closeModal">&times;</span>
+                            <h2>בחר סרטון</h2>
+                            <div id="videoListModal"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="forMe">
+                    <p>הכי כיף להתפנק במתנה לעצמך!</p>
+                    <img src="./image/gift_myself.svg" alt="">
+                </div>
+                <p id="Divider">__________________________________________________________________</p>
+                <button id="continueStep1" type="button">המשך</button>
+            </form>
+        </div>
+        <div id="step2">
+            <form id="payForm2">
+                <div id="nowAndLateDiv">
+                    <legend>מתי לשלוח את המתנה?</legend><br>
+                    <input type="radio" name="nowAndLate" id="now" value="1" checked>
+                    <label id="nowLable" for="now">עכשיו</label>
+                    <input type="radio" name="nowAndLate" id="latter" value="2">
+                    <label id="latterLable" for="latter">במועד מאוחר יותר</label><br><br>
+
+                    <input id="date2" type="date" placeholder="תאריך">
+                    <input id="time2" type="time" placeholder="שעה">
+                </div>
+                <p id="Divider">__________________________________________________________________</p>
+
+                <label>איך לשלוח את המתנה? ניתן לבחור יותר מדרך אחת</label><br><br>
+
+                <div id="button-container">
+                    <button id="btnx1" type="button">✕</button>
+                    <div id="button-wrapper-sms">
+                        <button type="button" id="button-sms">
+                            <img src="./image/טלפון ישר.png" width="50%" alt="טלפון">
+                        </button>
+                        <h5>SMS</h5>
+                        <input type="text" placeholder="נייד מקבל/ת המתנה" id="input-sms">
+                    </div>
+                    <button id="btnx2" type="button">✕</button>
+                    <div id="button-wrapper-email">
+                        <button type="button" id="button-email">
+                            <img src="./image/תיבת מייל כתומה.svg" alt="מייל">
+                        </button>
+                        <h5>מייל</h5>
+                        <input type="text" placeholder="מייל מקבל/ת המתנה" id="input-email">
+                    </div>
+                    <button id="btnx3" type="button">✕</button>
+                    <div id="button-wrapper-print">
+                        <button type="button" id="button-print">
+                            <img src="./image/מדפסת.png" width="60%" alt="הדפסה">
+                        </button>
+                        <h5>הדפסה</h5>
+                        <h6 id="nonePrint">
+                            <img src="./image/מועד מאוחר יותר.png" width="10%" alt="מועד מאוחר יותר">
+                            לאחר התשלום תהיה אפשרות<br>להדפסת המתנה
+                        </h6>
+                    </div>
+                </div>
+                <br>
+                <h6 id="greenWsp">אחרי התשלום, ניתן לשלוח גם בוואטסאפ<img id="greenWspImg" src="./image/וואסטאפ.png">
+                </h6>
+                <h6 id="insteadGreenWsp"><img src="./image/מועד מאוחר יותר.png" width="2%" alt="מועד מאוחר יותר">בשליחה
+                    במועד מאוחר יותר, לא ניתן לשלוח בוואטסאפ</h6>
+                <p id="Divider">__________________________________________________________________</p>
+
+                <label for="fromGift">ממי המתנה?</label><br>
+                <input id="fromGift2" type="text" name="fromGift" placeholder="שם שולח המתנה"
+                    title="למי יגידו תודה? שכחת למלא את השם שלך" requiredpattern="^(?=.*[א-ת])" required><br>
+                <p id="Divider">__________________________________________________________________</p>
+
+                <button type="button" id="continueStep2">המשך לתשלום</button>
+
+            </form>
+        </div>
+        <div id="step3">
+            <form id="payForm3">
+                <p>סה"כ לתשלום <span id="total"></span> ש"ח</p>
+                <p id="Divider">__________________________________________________________________</p>
+
+                <label>בחירת אמצעי תשלום</label><br><br>
+                <button id="btnCreditCard" type="button"> <img src="./image/כרטיס אשראי.png" alt="">כרטיס
+                    אשראי</button><br>
+                <button id="btnPayPal" type="button"><img src="./image/PAYPAL.png" alt="">PayPal</button>
+                <p id="Divider">__________________________________________________________________</p>
+                <input id="per3" name="per3" type="checkbox">
+                <label id="per3" for="per3"></label>
+                <p id="per3P">קראתי והסכמתי ל<a href="./Terms.html">תנאי השימוש</a> באתר וכן ל<a
+                        href="./privacy.html">מדיניות הפרטיות</a></p>
+                <button id="continueStep3" type="button"></span>אישור התשלום ושליחת המתנה</button>
+            </form>
+        </div>
+
+
+        <div id="endPay">
+            <h1>התשלום בוצע בהצלחה!</h1>
+            <a href="./index.html">לדף הבית</a>
+        </div>
+
+
+
+
+    </section>
+    <!-- מתחת לפוטר -->
+    <div id="afterFooter">
+        <a href=""><img src="./image/סימן שאלה.svg" alt=""></a>
+        <a href=""><img src="./image/תיבת מייל.svg" alt=""></a>
+        <a href=""><img src="./image/טלפון.svg" alt=""></a>
+        <a href=""><img src="./image/טלפון (2).svg" alt=""></a>
+        <a href=""><img src="./image/מצלמה.svg" alt=""></a>
+        <img src="./image/c.png" alt="" id="c" width="8%">
+        <img src="./image/pci.png" alt="">
+        <img src="./image/לוגו!.svg" alt="" width="3.5%">
+    </div>
+
+    <div class="picturePay">
+        <img id="imagePay">
+        <div class="overlayTextPay">
+            <p>שובר כספי בסך <span id="sumPay"></span> ש"ח למימוש ב<span id="namePay"></span></p>
+            <a id="changeSumLink" href="#" onclick="changeSumFunc(); return false;">שינוי סכום המתנה</a>
+            <input id="pricePay" type="text" placeholder="הכנס סכום">
+            <button id="selectPay" type="submit">אישור</button>
+        </div>
+    </div>
+
+    <!-- חלוניות קופצות -->
+    <!-- חלונית כניסה -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <form id="enterForm">
+                <button class="close">✕</button>
+                <h1>היי, טוב לראות אותך!</h1><br>
+                <h3>הכנס שם וסיסמה</h3><br>
+
+                <input type="text" id="userName" name="name" placeholder="שם מלא"><br />
+                <input type="password" id="password" name="password" placeholder="סיסמה"
+                    pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}"
+                    title="הסיסמה חייבת להכיל לפחות אות קטנה אחת, אות גדולה אחת ומספר אחד 6-12 תוים" required><br>
+                <p id="notValid">הסיסמה שגויה</p>
+                <button type="submit" id="enter">הכנס</button>
+            </form>
+        </div>
+    </div>
+    <!-- חלונית הרשמה -->
+
+    <div id="modalReg" class="modalReg">
+        <div class="modalReg-content">
+            <form id="registerForm">
+                <button class="closeReg">✕</button>
+                <h2>רק עוד כמה פרטים וסיימנו</h2><br>
+                <input type="email" id="emailReg" name="email" placeholder="מייל"
+                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" title="אנא הזן כתובת מייל תקינה"
+                    required><br><br />
+                <input type="text" id="phoneReg" name="phone" placeholder="טלפון נייד"><br>
+                <p>הנייד יעזור לנו שהמתנה לא תלך לאיבוד</p>
+                <input type="checkbox" name="agree" id="agree">
+                <label for="agree"></label>
+                <p>אני מסכימ/ה <a href="./privacy.html">למדיניות הפרטיות </a><a href="./Terms.html">ולתנאי
+                        השימוש</a><br> ב-BUYME שתאסוף עלי מידע לצורך תפעול שוברי<br> המנה.</p><br>
+                <input type="checkbox" name="per" id="per">
+                <label for="per"></label>
+                <p>אישור קבלת דיוור פירסומי מ-BUYME,בכל מדיה.<br>מבטיחים לשלוח רק מה שמעניין :)</p><br>
+                <button type="submit" id="registerBtn">הרשמה</button>
+            </form>
+        </div>
+    </div>
+    <!-- חלונית תשלום -->
+    <div id="modalPay" class="modalPay">
+        <div class="modalPay-content">
+            <form id="payForm">
+                <div id="headPay">
+                    <button id="closePayForm" type="button">✕</button>
+                    <h1>הוספת כרטיס אשראי</h1>
+                </div>
+                <label for="numberCard">מספר כרטיס</label>
+                <input type="text" id="numberCard" name="numberCard" required>
+                <label for="validity">תוקף כרטיס</label>
+                <input type="text" id="year" name="validity" placeholder="שנה" required>
+                <input type="text" id="month" name="validity" placeholder="חודש" required>
+                <label for="cvv">cvv</label>
+                <input type="text" id="cvv" name="cvv" required>
+                <label for="identity">תעודת זהות</label>
+                <input type="text" id="identity" name="identity" required>
+                <label for="nameCard">שם בעל הכרטיס</label>
+                <input type="text" id="nameCard" name="nameCard" required><br />
+                <button type="button" id="addCard">הוספת כרטיס</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="./jquery-3.2.1.js"></script>
+    <script src="./pay.js"></script>
+</body>
+
+</html>
